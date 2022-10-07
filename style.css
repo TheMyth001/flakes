@@ -1,0 +1,280 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  /* box-sizing: border-box; */
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  height: 100vh; /*sets the height of the body to 100% of the viewport*/
+}
+
+.navbar {
+  width: 100%;
+  height: 50px;
+  background-color: #000;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  margin-left: 50px;
+  height: 100%;
+  font-family: "Sen", sans-serif;
+  color: #fff;
+}
+
+.logo-container {
+  flex: 1.5;
+}
+
+.logo {
+  font-size: 30px;
+  color: #4dbf00;
+  margin-left: 10px;
+}
+
+.menu-container {
+  flex: 6;
+}
+
+.menu-list {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.menu-list-item {
+  cursor: pointer;
+}
+
+.menu-list-item.active {
+  font-weight: bold;
+}
+
+.profile-container {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.profile-picture {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.toggle {
+  width: 40px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 30px;
+  margin-right: 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+}
+
+.toggle-icon {
+  color: goldenrod;
+}
+
+.toggle-ball {
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  border-radius: 100%;
+  background-color: #000;
+  right: 1px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.sidebar {
+  width: 50px;
+  height: 100%;
+  background-color: #000;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  align-items: center;
+  gap: 40px;
+}
+.sidebar-icon {
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.container {
+  background-color: #151515;
+  min-height: calc(100vh - 50px);
+}
+
+.content-container {
+  margin-left: 50px;
+  color: white;
+}
+
+.featured-content {
+  height: 50vh;
+  padding: 50px;
+}
+.featured-title {
+  width: 200px;
+}
+.featured-desc {
+  width: 500px;
+  color: lightgray;
+  margin: 30px 0px;
+}
+.featured-button {
+  background-color: #4dbf00;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.movie-list-container {
+  padding: 20px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+.movie-list-wrapper {
+  display: flex;
+  height: 250px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.movie-list {
+  display: flex;
+  gap: 30px;
+  transition: all 0.5s ease-in-out;
+  transform: translateX(0px);
+}
+.movie-list-item:hover {
+  transform: scale(1.2);
+  margin: 0px 30px;
+}
+.movie-list-item {
+  object-fit: cover;
+  transition: all 0.5s ease-in-out;
+  position: relative;
+}
+
+.movie-list-item-image {
+  width: 270px;
+  height: 200px;
+  object-fit: cover;
+  transition: all 0.5s ease-in-out;
+  border-radius: 10px;
+}
+.movie-list-item:hover .movie-list-item-image {
+  opacity: 0.2;
+}
+
+.movie-list-item-title {
+  padding: 0 10px;
+  font-size: 32px;
+  font-weight: bold;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 196px;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.movie-list-item-desc {
+  padding: 10px;
+  font-size: 12px;
+  width: 200px;
+  position: absolute;
+  width: 196px;
+  top: 30%;
+  left: 10%;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.movie-list-item-button {
+  background-color: #4dbf00;
+  padding: 10px;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  position: absolute;
+  top: 70%;
+  left: 13%;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.movie-list-item:hover .movie-list-item-title,
+.movie-list-item:hover .movie-list-item-desc,
+.movie-list-item:hover .movie-list-item-button {
+  opacity: 1;
+}
+
+.arrow {
+  font-size: 120px;
+  position: absolute;
+  right: 0px;
+  cursor: pointer;
+  color: white;
+  opacity: 0.6;
+  align-items: center;
+}
+
+/* LIGHT THEME */
+.container.active {
+  background-color: white;
+}
+.navbar.active {
+  background-color: white;
+}
+.navbar-container.active {
+  color: black;
+}
+.sidebar.active {
+  background-color: white;
+}
+.sidebar-icon.active {
+  color: black;
+}
+.movie-list-title.active {
+  color: black;
+}
+.toggle.active {
+  background-color: black;
+}
+.toggle-ball.active {
+  background-color: white;
+  transform: translateX(-20px);
+}
+.movie-list-item-title.active {
+  color: black;
+}
+.movie-list-item-desc.active {
+  color: black;
+}
+.movie-list-item-button.active {
+  color: black;
+}
+.featured-button.active {
+  color: black;
+}
